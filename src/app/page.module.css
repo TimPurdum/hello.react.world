@@ -1,19 +1,33 @@
+@import url("https://js.arcgis.com/4.32/@arcgis/core/assets/esri/themes/dark/main.css");
+@import url("https://js.arcgis.com/calcite-components/3.0.3/calcite.css");
+@import url("https://js.arcgis.com/map-components/4.32/arcgis-map-components.css");
+
 .page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
+  min-height: calc(100vh - 64px); /* Subtract AppBar height */
+  padding: 0 2rem 2rem;
+  background-color: #f5f7fa;
   font-family: var(--font-geist-sans);
+}
+
+.main {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Add a subtle pattern to the background */
+.page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: 
+    linear-gradient(to right, rgba(13, 71, 161, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(13, 71, 161, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: -1;
 }
 
 @media (prefers-color-scheme: dark) {
